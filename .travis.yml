@@ -19,3 +19,17 @@ after_success:
   - docker push valentergs/multi-nginx
   - docker push valentergs/multi-server
   - docker push valentergs/multi-worker
+
+ deploy:
+  provider: elasticbeanstalk
+  region: sa-east-1
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-sa-east-1-340831665464
+  bucket_path: docker-multi
+  on: 
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: $AWS_SECRET_KEY
+
