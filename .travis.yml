@@ -14,7 +14,7 @@ after_success:
   - docker build -t valentergs/multi-server ./server
   - docker build -t valentergs/multi-worker ./worker
   # Login in to the Docker CLI - é preciso incluir ID e SENHA do Docker dentro do setup/enviroment to Travis CI
-  - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --pasword-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin
   - docker push valentergs/multi-client
   - docker push valentergs/multi-nginx
   - docker push valentergs/multi-server
