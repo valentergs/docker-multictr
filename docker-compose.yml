@@ -7,6 +7,7 @@ services:
   nginx:
     restart: always
     build:
+      # Colocar Dockerfile ou Dockerfile.dev?
       dockerfile: Dockerfile.dev
       context: ./nginx
     ports:
@@ -14,6 +15,7 @@ services:
   api:
     build:
       # nome do arquivo
+      # Colocar Dockerfile ou Dockerfile.dev?
       dockerfile: Dockerfile.dev
       # nome do diretorio
       context: ./server
@@ -38,6 +40,9 @@ services:
       - /app/node_modules
       - ./client/app
   worker:
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
     build:
       dockerfile: Dockerfile.dev
       context: ./worker
