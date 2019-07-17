@@ -27,10 +27,10 @@ deploy:
   secret_access_key:
     secure: "$AWS_SECRET_KEY"
   region: sa-east-1
-  app: containerstack
-  env: Containerstack-env
+  app: HamburgSud
+  env: Hamburgsud-env
   # Essa informação pode ser encontrada no AWS-S3
   bucket_name: elasticbeanstalk-sa-east-1-340831665464
-  bucket_path: docker-multi
+  bucket_path: many-containers
   on:
     branch: master
