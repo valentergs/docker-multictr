@@ -19,18 +19,17 @@ after_success:
   - docker push valentergs/multi-nginx
   - docker push valentergs/multi-server
   - docker push valentergs/multi-worker
-
-deploy:
-  provider: elasticbeanstalk
-  access_key_id:
-    secure: "$AWS_ACCESS_KEY"
-  secret_access_key:
-    secure: "$AWS_SECRET_KEY"
-  region: sa-east-1
-  app: HamburgSud
-  env: Hamburgsud-env
-  # Essa informação pode ser encontrada no AWS-S3
-  bucket_name: elasticbeanstalk-sa-east-1-340831665464
-  bucket_path: many-containers
-  on:
-    branch: master
+# deploy:
+#   provider: elasticbeanstalk
+#   access_key_id:
+#     secure: "$AWS_ACCESS_KEY"
+#   secret_access_key:
+#     secure: "$AWS_SECRET_KEY"
+#   region: sa-east-1
+#   app: HamburgSud
+#   env: Hamburgsud-env
+#   # Essa informação pode ser encontrada no AWS-S3
+#   bucket_name: elasticbeanstalk-sa-east-1-340831665464
+#   bucket_path: many-containers
+#   on:
+#     branch: master
